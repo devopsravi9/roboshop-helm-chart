@@ -1,0 +1,24 @@
+#deployment not supports parameters
+#we have to write same code for each app those many times.
+#so we came with HELM CHARTS.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}
+  labels:
+    app: {{ .Values.appName }}
+spec:
+  # modify replicas according to your case
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: {{ .Values.appName }}
+  template:
+    metadata:
+      labels:
+        tier: {{ .Values.appName }}
+    spec:
+      containers:
+      - name: {{ .Values.appName }}
+        image: 041583668323.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName }}
