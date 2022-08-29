@@ -11,6 +11,7 @@ metadata:
   name: {{ .Values.appName }}
   labels:
     app: {{ .Values.appName }}
+    ephoc: {{ .Values.ephoc }}
 spec:
   # modify replicas according to your case
   replicas: 1
