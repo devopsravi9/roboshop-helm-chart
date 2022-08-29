@@ -10,5 +10,6 @@ spec:
   - protocol: TCP
     port: {{ .Values.service.port}}
     targetPort: {{ .Values.service.port}}
+  endpoints: {{ .Values.appName }}
 
 #slector use pod level labels
