@@ -7,7 +7,7 @@ kind: Deployment
 metadata:
   name: {{ .Values.appName }}
   labels:
-    app: {{ .Values.appName }}
+    tier: {{ .Values.appName }}
 spec:
   # modify replicas according to your case
   replicas: 1
