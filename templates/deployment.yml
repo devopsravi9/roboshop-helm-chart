@@ -2,6 +2,9 @@
 #we have to write same code for each app those many times.
 #so we came with HELM CHARTS.
 
+#selector label is use for endpoint generation. when selector names of pod & service matches then service creates endpoint
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,3 +25,4 @@ spec:
       containers:
       - name: {{ .Values.appName }}
         image: 041583668323.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName }}
+
