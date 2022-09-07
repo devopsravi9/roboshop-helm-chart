@@ -27,14 +27,14 @@ spec:
       containers:
       - name: {{ .Values.appName }}
         image: 041583668323.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName }}
-        imagePullPolicy: Always
-        {{- if .Values.configMap.enabled -}}
+        imagePullPolicy : Always
+        {{- if .Values.configMap.enabled }}
         envFrom :
         - configMapRef :
-            name : {{ .Values.appName }}
-        {{- end -}}
-        { { - if .Values.externalSecret.enabled } }
-        - secretRef :
             name : { { .Values.appName } }
-        { { - end } }
+        {{ - end }}
+        {{ - if .Values.externalSecret.enabled }}
+        - secretRef :
+            name : {{ .Values.appName }}
+        {{ - end }}
 
