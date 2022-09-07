@@ -31,7 +31,7 @@ spec:
         {{- if .Values.configMap.enabled }}
         envFrom :
         - configMapRef :
-            name : { { .Values.appName } }
+            name : {{ .Values.appName }}
         {{ - end }}
         {{ - if .Values.externalSecret.enabled }}
         - secretRef :
