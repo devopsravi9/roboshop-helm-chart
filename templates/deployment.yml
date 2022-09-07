@@ -33,6 +33,12 @@ spec:
         - configMapRef :
             name : {{ .Values.appName }}
         {{- end }}
+        resources :
+          {{- toYaml .Values.resources | nindent 10 }}
+
+
+
+
 #        {{- if .Values.externalSecret.enabled }}
 #        - secretRef :
 #            name : {{ .Values.appName }}
