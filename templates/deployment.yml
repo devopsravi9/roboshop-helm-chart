@@ -33,8 +33,8 @@ spec:
         - configMapRef :
             name : {{ .Values.appName }}
         {{- end }}
-        {{- if .Values.externalSecret.enabled }}
-        - secretRef :
-            name : {{ .Values.appName }}
-        {{- end }}
+#        {{- if .Values.externalSecret.enabled }}
+#        - secretRef :
+#            name : {{ .Values.appName }}
+#        {{- end }}
 
